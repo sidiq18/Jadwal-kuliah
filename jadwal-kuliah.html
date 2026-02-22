@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jadwal Kuliah</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .subtitle {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .table-wrapper {
+            padding: 30px;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        thead {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        th {
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 1em;
+            letter-spacing: 0.5px;
+        }
+
+        tbody tr {
+            transition: all 0.3s ease;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        tbody tr:hover {
+            background: #f5f7ff;
+            transform: scale(1.01);
+            box-shadow: 0 2px 8px rgba(102, 126, 234, 0.1);
+        }
+
+        tbody tr:last-child {
+            border-bottom: none;
+        }
+
+        td {
+            padding: 15px;
+            color: #333;
+        }
+
+        .day-cell {
+            font-weight: 600;
+            color: #667eea;
+        }
+
+        .time-cell {
+            color: #555;
+            font-family: 'Courier New', monospace;
+            white-space: nowrap;
+        }
+
+        .subject-cell {
+            font-weight: 500;
+            color: #333;
+        }
+
+        .lecturer-cell {
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        .room-cell {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            border-radius: 20px;
+            padding: 8px 15px;
+            font-weight: 600;
+            font-size: 0.9em;
+            display: inline-block;
+        }
+
+        footer {
+            background: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+            color: #666;
+            font-size: 0.9em;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+
+            .table-wrapper {
+                padding: 15px;
+            }
+
+            th, td {
+                padding: 10px;
+                font-size: 0.9em;
+            }
+
+            .room-cell {
+                font-size: 0.8em;
+                padding: 6px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 Jadwal Kuliah</h1>
+            <p class="subtitle">Semester Aktif</p>
+        </header>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Hari</th>
+                        <th>Waktu</th>
+                        <th>Mata Kuliah</th>
+                        <th>Dosen</th>
+                        <th>Ruang</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="day-cell">Selasa</td>
+                        <td class="time-cell">08:00 - 10:15</td>
+                        <td class="subject-cell">E-Business</td>
+                        <td class="lecturer-cell">Saefudin, M.Kom</td>
+                        <td><span class="room-cell">03.002</span></td>
+                    </tr>
+                    <tr>
+                        <td class="day-cell">Rabu</td>
+                        <td class="time-cell">08:00 - 09:30</td>
+                        <td class="subject-cell">Audit Sistem Informasi</td>
+                        <td class="lecturer-cell">Vidila Rosalina, M.Kom</td>
+                        <td><span class="room-cell">03.003</span></td>
+                    </tr>
+                    <tr>
+                        <td class="day-cell">Rabu</td>
+                        <td class="time-cell">09:30 - 11:00</td>
+                        <td class="subject-cell">Metodologi Penelitian</td>
+                        <td class="lecturer-cell">Dr. Suherman, ST., M.Kom</td>
+                        <td><span class="room-cell">03.001</span></td>
+                    </tr>
+                    <tr>
+                        <td class="day-cell">Kamis</td>
+                        <td class="time-cell">08:00 - 10:15</td>
+                        <td class="subject-cell">Sistem Pendukung Keputusan Berkelompok</td>
+                        <td class="lecturer-cell">Harsiti, ST., M.Kom</td>
+                        <td><span class="room-cell">03.002</span></td>
+                    </tr>
+                    <tr>
+                        <td class="day-cell">Kamis</td>
+                        <td class="time-cell">10:15 - 12:30</td>
+                        <td class="subject-cell">Supervised Learning</td>
+                        <td class="lecturer-cell">Denik Karyaningsih, M.Kom</td>
+                        <td><span class="room-cell">03.002</span></td>
+                    </tr>
+                    <tr>
+                        <td class="day-cell">Sabtu</td>
+                        <td class="time-cell">08:00 - 10:15</td>
+                        <td class="subject-cell">Business Intelligence</td>
+                        <td class="lecturer-cell">Ahmad Sugiarto, ST., M.Kom</td>
+                        <td><span class="room-cell">CB 01.005</span></td>
+                    </tr>
+                    <tr>
+                        <td class="day-cell">Sabtu</td>
+                        <td class="time-cell">08:00 - 22:00</td>
+                        <td class="subject-cell">Kuliah Kerja Mahasiswa (KKM)</td>
+                        <td class="lecturer-cell">Team</td>
+                        <td><span class="room-cell">03.001</span></td>
+                    </tr>
+                    <tr>
+                        <td class="day-cell">Sabtu</td>
+                        <td class="time-cell">10:15 - 13:15</td>
+                        <td class="subject-cell">Big Data Technology</td>
+                        <td class="lecturer-cell">Donny Fernando, S.Kom, MM</td>
+                        <td><span class="room-cell">LG.003</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <footer>
+            <p>💡 Jadwal dapat berubah sewaktu-waktu. Selalu cek pengumuman terbaru!</p>
+        </footer>
+    </div>
+</body>
+</html>
